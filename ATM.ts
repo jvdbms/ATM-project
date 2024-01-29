@@ -40,7 +40,10 @@ const answers1: ansType = await inquirer.prompt([
         type: "list",
         name: "Amount",
         message: "Kindly enter your Amount",
- 
+        when (answers) {
+            return answers.TransactionType == "Withdraw"
+        },
+      
     },
 
 ]) 
@@ -71,13 +74,13 @@ interface ansType{
 }
 const answers : ansType = await inquirer.prompt([
     {
-        type: "input",
+        type: "list",
         name: "UserID",
         choices: ["Abeera","Abeera Javaid", "Abeera  Ramla Javaid"],
-        message: "Kindly enter your UserID",
+        message: "Kindly select your UserID",
     },
     {
-        type: "input",
+        type: "list",
         name: "UserPIN",
         choices: [7 , 1 , 2012],
         message: "Kindly select your UserPIN",
@@ -87,9 +90,7 @@ const answers : ansType = await inquirer.prompt([
       name: "TransactionType",
       choices: ["Fast Cash", "Withdraw"],
       message: "Kindly selecy  your TransactionType",
-      when (answers) {
-          return answers.accountType
-      }
+      
     },
     {
         type: "list",
@@ -102,17 +103,12 @@ const answers : ansType = await inquirer.prompt([
         name: "Amount",
         choices: [1000000,20000000,300000000,4000000000,500000000,600000000,700000000,800000000,900000000,1000000000],
         message: "Kindly select your Amount",
-        when (answers) {
-            return answers.TransactionType == 'Fast Cash'
-        },
-    },
+           },
     {
       type: "list",
       name: "Amount",
       message: "Kindly enter your Amount",
-      when (answers) {
-          return answers.TransactionType == "Withdraw"
-      },
+     
     }
 ])
 if(answers.userID && answers.userPIN) {
