@@ -1,4 +1,3 @@
-"use strict";
 // import inquirer from "inquirer";
 // interface ansType{
 //     userID: string,
@@ -41,10 +40,6 @@
 //         when (answers) {
 //             return answers.TransactionType == 'Fast Cash'
 //         },
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 //     },
 //     {
 //         type: "list",
@@ -67,8 +62,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //         console.log("Insufficient Balance");
 //     }
 // }
-const inquirer_1 = __importDefault(require("inquirer"));
-const answers = await inquirer_1.default.prompt([
+import inquirer from "inquirer";
+const answers = await inquirer.prompt([
     {
         type: "input",
         name: "UserID",
