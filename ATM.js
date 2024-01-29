@@ -68,19 +68,19 @@ const answers = await inquirer.prompt([
         type: "input",
         name: "UserID",
         choices: ["Abeera", "Abeera Javaid", "Abeera  Ramla Javaid"],
-        message: "Kindly enter your UserID",
+        message: "Select your UserID",
     },
     {
         type: "input",
         name: "UserPIN",
         choices: [7, 1, 2012],
-        message: "Kindly enter your UserPIN",
+        message: "Select your UserPIN",
     },
     {
         type: "list",
         name: "TransactionType",
         choices: ["Fast Cash", "Withdraw"],
-        message: "Kindly enter your TransactionType",
+        message: "Kindly select your TransactionType",
         when(answers) {
             return answers.accountType;
         }
@@ -89,13 +89,13 @@ const answers = await inquirer.prompt([
         type: "list",
         name: "AcountType",
         choices: ["Saving", "Current"],
-        message: "Kindly enter your AccountType",
+        message: "Kindly select your AccountType",
     },
     {
         type: "list",
         name: "Amount",
         choices: [1000000, 20000000, 300000000, 4000000000, 500000000, 600000000, 700000000, 800000000, 900000000, 1000000000],
-        message: "Kindly enter your Amount",
+        message: "Kindly select  your Amount",
         when(answers) {
             return answers.TransactionType == 'Fast Cash';
         },

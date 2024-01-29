@@ -89,13 +89,13 @@ const answers : ansType = await inquirer.prompt([
         type: "input",
         name: "UserPIN",
         choices: [7 , 1 , 2012],
-        message: "Kindly enter your UserPIN",
+        message: "Kindly select your UserPIN",
     },
     {
       type: "list",
       name: "TransactionType",
       choices: ["Fast Cash", "Withdraw"],
-      message: "Kindly enter your TransactionType",
+      message: "Kindly selecy  your TransactionType",
       when (answers) {
           return answers.accountType
       }
@@ -104,13 +104,13 @@ const answers : ansType = await inquirer.prompt([
         type: "list",
         name: "AcountType",
         choices: ["Saving", "Current"],
-        message: "Kindly enter your AccountType",
+        message: "Kindly select your AccountType",
     },
     {
         type: "list",
         name: "Amount",
         choices: [1000000,20000000,300000000,4000000000,500000000,600000000,700000000,800000000,900000000,1000000000],
-        message: "Kindly enter your Amount",
+        message: "Kindly select your Amount",
         when (answers) {
             return answers.TransactionType == 'Fast Cash'
         },
@@ -127,7 +127,6 @@ const answers : ansType = await inquirer.prompt([
 if(answers.userID && answers.userPIN) {
 const balance = Math.floor(Math.random() *1000000000);
 console.log(balance);
-
 const EnteredAmount = answers.Amount;
 if(balance > EnteredAmount) {
     const remaining = balance - EnteredAmount;
