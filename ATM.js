@@ -15,9 +15,6 @@ const answers1 = await inquirer.prompt([
         name: "TransactionType",
         choices: ["Fast Cash", "Withdraw"],
         message: "Kindly enter your TransactionType",
-        when(answers) {
-            return answers.accountType;
-        }
     },
     {
         type: "list",
@@ -30,17 +27,11 @@ const answers1 = await inquirer.prompt([
         name: "Amount",
         choices: [1000, 2000, 10000, 20000],
         message: "Kindly enter your Amount",
-        when(answers) {
-            return answers.TransactionType == 'Fast Cash';
-        },
     },
     {
         type: "list",
         name: "Amount",
         message: "Kindly enter your Amount",
-        when(answers) {
-            return answers.TransactionType == "Withdraw";
-        },
     },
 ]);
 if (answers1.userID && answers1.userPIN) {
